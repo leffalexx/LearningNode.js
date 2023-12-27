@@ -1,0 +1,12 @@
+{
+  "name": "alexsortlib",
+  "version": "1.0.0",
+  "description": "This lib can help you choose the best method to sort an array",
+  "main": "alexsort.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node alexsort.js"
+  },
+  "author": "leffalexx",
+  "license": "ISC"
+}
