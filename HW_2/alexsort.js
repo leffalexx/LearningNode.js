@@ -1,5 +1,6 @@
 // Сортировка пузырьком
 function bubbleSort(arr) {
+    let start = performance.now();
     let len = arr.length;
     for (let i = 0; i < len; i++) {
         for (let j = 0; j < len; j++) {
@@ -10,11 +11,14 @@ function bubbleSort(arr) {
             }
         }
     }
+    let end = performance.now();
+    console.log(`Bubble sort time: ${end - start} ms`);
     return arr;
 }
 
 // Сортировка выбором
 function selectionSort(arr) {
+    let start = performance.now();
     let len = arr.length;
     for (let i = 0; i < len; i++) {
         let minIdx = i;
@@ -27,11 +31,14 @@ function selectionSort(arr) {
         arr[i] = arr[minIdx];
         arr[minIdx] = tmp;
     }
+    let end = performance.now();
+    console.log(`Selection sort time: ${end - start} ms`);
     return arr;
 }
 
 // Сортировка вставками
 function insertionSort(arr) {
+    let start = performance.now();
     let len = arr.length;
     for (let i = 1; i < len; i++) {
         let key = arr[i];
@@ -42,11 +49,14 @@ function insertionSort(arr) {
         }
         arr[j + 1] = key;
     }
+    let end = performance.now();
+    console.log(`Incertion sort time: ${end - start} ms`);
     return arr;
 }
 
 // Быстрая сортировка 
 function quickSort(arr) {
+    let start = performance.now();
     if (arr.length <= 1) {
         return arr;
     }
@@ -63,7 +73,8 @@ function quickSort(arr) {
             right.push(arr[i]);
         }
     }
-
+    let end = performance.now();
+    console.log(`Quick sort time: ${end - start} ms`);
     return quickSort(left).concat([pivot], quickSort(right));
 }
 
