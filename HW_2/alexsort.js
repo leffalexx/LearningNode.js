@@ -55,8 +55,20 @@ function insertionSort(arr) {
 }
 
 // Быстрая сортировка 
+
 function quickSort(arr) {
     let start = performance.now();
+
+    let sortedArr = actuatQuickSort(arr);
+
+    let end = performance.now();
+
+    console.log(`Quick sort time: ${end - start} ms`);
+
+    return sortedArr;
+}
+
+function actuatQuickSort(arr) {
     if (arr.length <= 1) {
         return arr;
     }
@@ -71,12 +83,18 @@ function quickSort(arr) {
             left.push(arr[i]);
         } else {
             right.push(arr[i]);
+
         }
     }
-    let end = performance.now();
-    console.log(`Quick sort time: ${end - start} ms`);
-    return quickSort(left).concat([pivot], quickSort(right));
+
+    left = actuatQuickSort(left);
+    right = actuatQuickSort(right);
+
+    let sortedArr = left.concat([pivot], right);
+
+    return sortedArr;
 }
+
 
 // Генерация массива
 function generateArray(n) {
