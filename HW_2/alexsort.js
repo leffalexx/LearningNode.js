@@ -59,7 +59,7 @@ function insertionSort(arr) {
 function quickSort(arr) {
     let start = performance.now();
 
-    let sortedArr = actuatQuickSort(arr);
+    let sortedArr = actualQuickSort(arr);
 
     let end = performance.now();
 
@@ -68,7 +68,7 @@ function quickSort(arr) {
     return sortedArr;
 }
 
-function actuatQuickSort(arr) {
+function actualQuickSort(arr) {
     if (arr.length <= 1) {
         return arr;
     }
@@ -87,8 +87,8 @@ function actuatQuickSort(arr) {
         }
     }
 
-    left = actuatQuickSort(left);
-    right = actuatQuickSort(right);
+    left = actualQuickSort(left);
+    right = actualQuickSort(right);
 
     let sortedArr = left.concat([pivot], right);
 
